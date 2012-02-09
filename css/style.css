@@ -1,0 +1,374 @@
+/* {{{ Resets */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video {
+    display: block;
+}
+
+a img { border: 0; }
+
+/* }}} */
+/* {{{ Fonts */
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('//www.mozilla.org/img/fonts/OpenSans-Light-webfont.eot');
+    src: url('//www.mozilla.org/img/fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('//www.mozilla.org/img/fonts/OpenSans-Regular-webfont.eot');
+    src: url('//www.mozilla.org/img/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('//www.mozilla.org/img/fonts/OpenSans-Semibold-webfont.eot');
+    src: url('//www.mozilla.org/img/fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('//www.mozilla.org/img/fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* }}} */
+/* {{{ Basic Colors, Text, Links */
+
+body {
+    font: 16px/24px Georgia, serif;
+    color: #333;
+    background: #fff;
+}
+
+#wrapper {
+    background: #f0f0f0;
+}
+
+a {
+    color: #67a7d0;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 24px 0 12px 0;
+}
+
+p,
+ul,
+ol,
+dl {
+    margin: 0 0 24px 0;
+}
+
+li {
+    margin-left: 24px;
+}
+
+/* }}} */
+/* {{{ Less Framework Grid */
+
+/*      Default Layout: 992px. 
+        Gutters: 24px.
+        Outer margins: 48px.
+        Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+.container {
+    width: 896px;
+    padding: 72px 48px 84px;
+    background: rgb(232,232,232);
+    color: rgb(60,60,60);
+    -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+
+
+/*      Tablet Layout: 768px.
+        Gutters: 24px.
+        Outer margins: 28px.
+        Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    #outer-wrapper {
+        width: 712px;
+        padding: 48px 28px 60px;
+    }
+}
+
+
+
+/*      Mobile Layout: 320px.
+        Gutters: 24px.
+        Outer margins: 34px.
+        Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+    
+    #outer-wrapper {
+        width: 252px;
+        padding: 48px 34px 60px;
+    }
+    
+}
+
+
+
+/*      Wide Mobile Layout: 480px.
+        Gutters: 24px.
+        Outer margins: 22px.
+        Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    
+    #outer-wrapper {
+        width: 436px;
+        padding: 36px 22px 48px;
+    }
+    
+}
+
+/* }}} */
+/* {{{ Layout */
+
+#outer-wrapper {
+    border-top: 2px solid #fff;
+}
+
+#masthead,
+#colophon,
+#main-content {
+    margin: 0 auto;
+    padding-left: 48px;
+    padding-right: 48px;
+    position: relative;
+    width: 896px;
+}
+
+#main-content:before, #main-content:after {
+    display: table;
+    content: "";
+}
+#main-content:after {
+    clear: both;
+}
+
+.row {
+  margin-left: -24px;
+  *zoom: 1;
+}
+.row:before, .row:after {
+  display: table;
+  content: "";
+}
+.row:after {
+  clear: both;
+}
+[class*="span"] {
+  float: left;
+  margin-left: 24px;
+}
+.span1 {
+  width: 68px;
+}
+.span2 {
+  width: 160px;
+}
+.span3 {
+  width: 252px;
+}
+.span4 {
+  width: 344px;
+}
+.span5 {
+  width: 436px;
+}
+.span6 {
+  width: 528px;
+}
+.span7 {
+  width: 620px;
+}
+.span8 {
+  width: 712px;
+}
+.span9 {
+  width: 804px;
+}
+.span10 {
+  width: 896px;
+}
+.span11 {
+  width: 988px;
+}
+.span12, .container {
+  width: 1080px;
+}
+.offset1 {
+  margin-left: 116px;
+}
+.offset2 {
+  margin-left: 208px;
+}
+.offset3 {
+  margin-left: 300px;
+}
+.offset4 {
+  margin-left: 392px;
+}
+.offset5 {
+  margin-left: 484px;
+}
+.offset6 {
+  margin-left: 576px;
+}
+.offset7 {
+  margin-left: 668px;
+}
+.offset8 {
+  margin-left: 760px;
+}
+.offset9 {
+  margin-left: 852px;
+}
+.offset10 {
+  margin-left: 944px;
+}
+.offset11 {
+  margin-left: 1036px;
+}
+
+/* }}} */
+/* {{{ Header Nav */
+
+#masthead h1 {
+    padding: 48px 0 24px 0;
+    margin: 0;
+}
+
+#masthead nav {
+    float: right;
+    margin-right: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+#masthead nav ul li {
+    list-style-type: none;
+    display: inline;
+}
+
+#masthead nav ul a,
+#masthead nav ul span {
+    display: inline-block;
+    padding: 12px;
+}
+
+#masthead nav ul a,
+#masthead nav ul a:link,
+#masthead nav ul a:visited {
+    color: #484848;
+}
+
+/* }}} */
+/* {{{ Header Breadcrumbs */
+
+#masthead nav.breadcrumbs {
+    float: none;
+    padding: 24px 0;
+}
+
+#masthead .breadcrumbs a,
+#masthead .breadcrumbs span {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+#masthead .breadcrumbs a:first-child,
+#masthead .breadcrumbs span:first-child {
+    margin-left: 0;
+}
+
+/* }}} */
+/* {{{ Sidebar */
+
+#sidebar nav {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #484848;
+}
+
+#sidebar nav li {
+    list-style-type: none;
+    border-bottom: 1px dotted #ccc;
+}
+
+#sidebar nav li:first-child {
+    font-size: 24px; 
+}
+
+#sidebar nav li a,
+#sidebar nav li b {
+    display: block;
+    padding: 8px 0;
+}
+
+#sidebar nav li b {
+    font-weight: 600;
+}
+
+/* }}} */
+/* {{{ Footer */
+
+#colophon {
+    color: #bbb;
+    padding: 48px 0;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#colophon nav {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#colophon nav ul li {
+    list-style-type: none;
+}
+
+/* }}} */
