@@ -57,7 +57,10 @@ body {
 }
 
 #wrapper {
-    background: #f0f0f0;
+    background-color: #f2f0ee;
+    background-image: url(../img/stripes.png), -moz-radial-gradient(left top, circle, rgba(250, 221, 195,1) 2%, rgba(238, 215, 211,0.75) 20%, rgba(238, 215, 211,0) 40%);
+    background-position: 0 0, 0 0;
+    background-repeat: repeat-x, no-repeat;
 }
 
 a {
