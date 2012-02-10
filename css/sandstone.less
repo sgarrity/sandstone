@@ -1,3 +1,16 @@
+/* {{{ LESS Vars */
+
+@text-color-primary:   #333;
+@text-color-secondary: #484848;
+@text-color-light:     #bbb;
+
+@link-blue:    #67a7d0;
+
+.open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* }}} */
 /* {{{ Resets */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {
     margin: 0;
@@ -52,19 +65,16 @@ a img { border: 0; }
 
 body {
     font: 16px/24px Georgia, serif;
-    color: #333;
+    color: @text-color-primary;
     background: #fff;
 }
 
 #wrapper {
-    background-color: #f2f0ee;
-    background-image: url(../img/stripes.png), -moz-radial-gradient(left top, circle, rgba(250, 221, 195,1) 2%, rgba(238, 215, 211,0.75) 20%, rgba(238, 215, 211,0) 40%);
-    background-position: 0 0, 0 0;
-    background-repeat: repeat-x, no-repeat;
+    background: #f2f0ee url(../img/bg.png) 0 0 repeat-x;
 }
 
 a {
-    color: #67a7d0;
+    color: @link-blue;
     text-decoration: none;
 }
 
@@ -74,7 +84,7 @@ a:active {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', sans-serif;
+    .open-sans;
     font-weight: 300;
     margin: 24px 0 12px 0;
 }
@@ -278,100 +288,121 @@ px      68    160    252    344    436    */
 /* }}} */
 /* {{{ Header Nav */
 
-#masthead h1 {
-    padding: 48px 0 24px 0;
-    margin: 0;
+#masthead {
+
+    h1 {
+        padding: 48px 0 24px 0;
+        margin: 0;
+    }
+
+    nav {
+        float: right;
+        margin-right: 16px;
+        text-transform: uppercase;
+        font-size: 13px;
+        .open-sans;
+
+        ul li {
+            list-style-type: none;
+            display: inline;
+
+            a,
+            span {
+                display: inline-block;
+                padding: 12px;
+            }
+
+            a,
+            a:link,
+            a:visited {
+                color: @text-color-secondary;
+            }
+
+        }
+
+    }
+
 }
 
-#masthead nav {
-    float: right;
-    margin-right: 16px;
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-}
-
-#masthead nav ul li {
-    list-style-type: none;
-    display: inline;
-}
-
-#masthead nav ul a,
-#masthead nav ul span {
-    display: inline-block;
-    padding: 12px;
-}
-
-#masthead nav ul a,
-#masthead nav ul a:link,
-#masthead nav ul a:visited {
-    color: #484848;
-}
 
 /* }}} */
 /* {{{ Header Breadcrumbs */
 
-#masthead nav.breadcrumbs {
-    float: none;
-    padding: 24px 0;
-}
+#masthead {
 
-#masthead .breadcrumbs a,
-#masthead .breadcrumbs span {
-    margin-right: 1em;
-    margin-left: 1em;
-}
+    nav.breadcrumbs {
+        float: none;
+        padding: 24px 0;
 
-#masthead .breadcrumbs a:first-child,
-#masthead .breadcrumbs span:first-child {
-    margin-left: 0;
+        a,
+        span {
+            margin-right: 1em;
+            margin-left: 1em;
+        }
+
+        a:first-child,
+        span:first-child {
+            margin-left: 0;
+        }
+
+    }
+
 }
 
 /* }}} */
 /* {{{ Sidebar */
 
-#sidebar nav {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #484848;
-}
+#sidebar {
 
-#sidebar nav li {
-    list-style-type: none;
-    border-bottom: 1px dotted #ccc;
-}
+    nav {
+        .open-sans;
+        font-size: 16px;
+        font-weight: 300;
+        color: @text-color-secondary;
 
-#sidebar nav li:first-child {
-    font-size: 24px; 
-}
+        li {
+            list-style-type: none;
+            border-bottom: 1px dotted #ccc;
 
-#sidebar nav li a,
-#sidebar nav li b {
-    display: block;
-    padding: 8px 0;
-}
+            a,
+            b {
+                display: block;
+                padding: 8px 0;
+            }
 
-#sidebar nav li b {
-    font-weight: 600;
+            li b {
+                font-weight: 600;
+            }
+
+        }
+
+        li:first-child {
+            font-size: 24px;
+        }
+
+    }
+
 }
 
 /* }}} */
 /* {{{ Footer */
 
 #colophon {
-    color: #bbb;
+    color: @text-color-light;
     padding: 48px 0;
     font-size: 14px;
     line-height: 18px;
-}
 
-#colophon nav {
-    font-family: 'Open Sans', sans-serif;
-}
+    nav {
+        .open-sans;
 
-#colophon nav ul li {
-    list-style-type: none;
+        ul li {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+    }
+
 }
 
 /* }}} */
